@@ -6,10 +6,18 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper";
 import { SliderProducts } from "../../data/products";
+
 const Slider = () => {
   return (
     <div className="s-container">
       <Swiper
+        navigation={true}
+        loopFillGroupWithBlank={true}
+        modules={[Navigation, Pagination]}
+        slidesPerView={3}
+        spaceBetween={40}
+        slidesPerGroup={1}
+        loop={true}
         breakpoints={{
           856: {
             slidesPerView: 3,
@@ -21,13 +29,7 @@ const Slider = () => {
             slidesPerView: 1,
           },
         }}
-        navigation={true}
-        loopFillGroupWithBlank={true}
-        modules={[Navigation, Pagination]}
-        slidesPerView={3}
-        spaceBetween={40}
-        slidesPerGroup={1}
-        loop={true}
+
       >
         {SliderProducts.map((slide, i) => (
           <SwiperSlide key={i}>
@@ -43,7 +45,7 @@ const Slider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </div >
   );
 };
 

@@ -3,6 +3,8 @@ import css from "./Testimonials.module.css";
 import Hero from "../../assets/testimonialHero.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonialsData } from "../../data/testimonials";
+import { Navigation, Pagination } from "swiper";
+
 const Testimonials = () => {
   return (
     <div className={css.testimonials}>
@@ -23,9 +25,13 @@ const Testimonials = () => {
       <div className={css.reviews}>Reviews</div>
       <div className={css.carousel}>
         <Swiper
+          navigation={true}
+          loopFillGroupWithBlank={true}
+          modules={[Navigation, Pagination]}
           slidesPerView={3}
+          spaceBetween={40}
           slidesPerGroup={1}
-          spaceBetween={20}
+          loop={true}
           className={css.tCarousel}
           breakpoints={{
             856: {
